@@ -1,0 +1,108 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #2a3148 #0a0d15;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0d15;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2a3148;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3a4565;
+}
+
+body {
+  background: #08090f;
+  color: #d1d5db;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes pulse-border {
+  0%, 100% { border-color: rgba(245, 158, 11, 0.3); }
+  50% { border-color: rgba(245, 158, 11, 0.6); }
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-4px); }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.4s ease-out forwards;
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, transparent 0%, rgba(245, 158, 11, 0.06) 50%, transparent 100%);
+  background-size: 200% 100%;
+  animation: shimmer 2s ease-in-out infinite;
+}
+
+.animate-pulse-border {
+  animation: pulse-border 2s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.shot-card {
+  animation: fade-up 0.4s ease-out forwards;
+  opacity: 0;
+}
+
+.shot-card:nth-child(1) { animation-delay: 0.05s; }
+.shot-card:nth-child(2) { animation-delay: 0.1s; }
+.shot-card:nth-child(3) { animation-delay: 0.15s; }
+.shot-card:nth-child(4) { animation-delay: 0.2s; }
+.shot-card:nth-child(5) { animation-delay: 0.25s; }
+.shot-card:nth-child(6) { animation-delay: 0.3s; }
+.shot-card:nth-child(7) { animation-delay: 0.35s; }
+.shot-card:nth-child(8) { animation-delay: 0.4s; }
+.shot-card:nth-child(9) { animation-delay: 0.45s; }
+.shot-card:nth-child(10) { animation-delay: 0.5s; }
+
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+select:focus {
+  outline: none;
+  border-color: rgba(245, 158, 11, 0.5) !important;
+  box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.1);
+}
+
+.glass-card {
+  background: linear-gradient(135deg, rgba(15, 18, 30, 0.9), rgba(20, 24, 40, 0.8));
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(42, 49, 72, 0.6);
+}
+
+.golden-glow {
+  box-shadow: 0 0 30px rgba(245, 158, 11, 0.15), 0 0 60px rgba(245, 158, 11, 0.05);
+}
